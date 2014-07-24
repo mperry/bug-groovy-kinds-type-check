@@ -8,10 +8,10 @@ import groovy.transform.TypeChecked
  */
 
 @TypeChecked
-class MapFunctor3 implements FunctorG<Map> {
+class MapFunctor0 implements Functor<Map> {
 
     @Override
-    def <A, B, C> Map<String, Integer> fmap(F<A, B> f, Map<Boolean, Long> fa) {
+    def <A, B> Map<String, Integer> map(Map<Boolean, Long> fa, F<A, B> f) {
         fa.collectEntries { Boolean k, Long v ->
             ["abc", 0]
         }

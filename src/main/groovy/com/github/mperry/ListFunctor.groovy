@@ -7,12 +7,11 @@ import groovy.transform.TypeChecked
  * Created by mperry on 1/07/2014.
  */
 @TypeChecked
-class ListFunctor implements FunctorG<List> {
-
+class ListFunctor implements Functor<List> {
 
     @Override
-    def <A, B> List<B> fmap(F<A, B> f, List<A> fa) {
-        fa.collect { A a ->
+    def <A, B> List<B> map(List<A> list, F<A, B> f) {
+        list.collect { A a ->
             f.f(a)
         }
     }

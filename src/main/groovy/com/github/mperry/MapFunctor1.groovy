@@ -8,11 +8,11 @@ import groovy.transform.TypeChecked
  */
 
 @TypeChecked
-class MapFunctor implements FunctorG<Map> {
+class MapFunctor1 implements Functor<Map> {
 
     @Override
-    def <A, B> Map<String, B> fmap(F<A, B> f, Map<String, A> fa) {
-        fa.collectEntries { String k, A a ->
+    def <A, B> Map<String, B> map(Map<String, A> map, F<A, B> f) {
+        map.collectEntries { String k, A a ->
             [k, f.f(a)]
         }
     }
